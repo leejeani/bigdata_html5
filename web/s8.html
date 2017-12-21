@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+
+
+window.onload = function(){
+	
+	var	time = 
+		document.getElementById('time');
+	
+	setInterval(function() {
+		var date = new Date();
+		time.innerHTML = date.getHours()+":"+
+        date.getMinutes()+":"+
+        date.getSeconds();
+	}, 1000);
+};
+
+function c1(){
+	var num = 
+		document.getElementById('num').value;
+	var result = 
+		document.getElementById('result');
+	var result2 = 
+		document.getElementById('result2');
+	
+	result.value = num;
+	result2.innerHTML = 
+		'<a href="http://www.naver.com">'
+		+num+'</a>';
+	
+};
+</script>
+</head>
+<body>
+<h1>조건문</h1>
+<h2 id="time"></h2>
+INPUT TIME<input type="number" id="num"><br>
+RESULT:<input type="text" id="result"><br>
+RESULT2:<span id="result2"></span><br>
+<button onclick="c1();">CLICK</button>
+</body>
+</html>
+
+
+
+
+
+

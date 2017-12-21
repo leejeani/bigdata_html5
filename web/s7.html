@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+input:focus{
+	background:silver;
+}
+span{
+	color:red;
+}
+</style>
+<script>
+function login(f){
+	var id = f.id.value;
+	var pwd = f.pwd.value;
+	if(id == '' || id == null){
+		//alert('ID를 입력 하세요');
+		document.getElementById('sid').innerHTML 
+		= 'ID를 입력 하세요';
+		f.id.focus();
+		return;
+	}
+	if(pwd == '' || pwd == null){
+	    document.getElementById('spwd').innerHTML 
+		= 'PWD를 입력 하세요';
+		//alert('PWD를 입력 하세요');
+		f.pwd.focus();
+		return;
+	}
+	var c = confirm('로그인 하시겠습니까?');
+	if(c == true){
+		f.method = 'POST';
+		f.action = 'login';
+		f.submit();
+	}
+};
+</script>
+</head>
+<body>
+<h1>LOGIN</h1>
+<form action="login" method="POST">
+ID<input type="text" name="id"><span id="sid"></span><br>
+PWD<input type="password" name="pwd"><span id="spwd"></span><br>
+<input type="button" value="LOGIN"
+onclick="login(this.form);">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

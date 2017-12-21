@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+#result{
+	width:300px;
+	border:2px solid red;
+}
+</style>
+<script>
+var datas = [10,20,30,40,50];
+window.onload = function(){
+	var result = 
+		document.getElementById('result');
+	var output = '';
+	for(i in datas){
+		output += '<h2>';
+		output += i+' : '+datas[i];
+		output += '</h2>';
+	}
+
+	result.innerHTML = output;
+};
+</script>
+</head>
+<body>
+<h1>Array Test</h1>
+합계:<span id="sum"></span>
+,평균:<span id="avg"></span>
+<div id="result"></div>
+</body>
+</html>
+
+
+
+

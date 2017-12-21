@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+table{
+	width:400px;
+	border:2px solid black;
+	border-collapse: collapse;
+}
+table > thead > tr{
+	background: black;
+	color:white;
+}
+table > tbody > tr{
+	text-align: center;
+}
+</style>
+<script>
+function getData(){
+	var tbody = 
+	document.getElementById('tbody');
+	var content = '';
+	for(var i=1;i<=30;i++){
+		content += '<tr>';
+		content += '<td>id'+i+'</td>';
+		content += '<td>name'+i+'</td>';
+		content += '<td>pwd'+i+'</td>';
+		content += '</tr>';
+	};
+	tbody.innerHTML = content;
+};
+</script>
+</head>
+<body>
+<h1>FOR TEST 2</h1>
+<button onclick="getData();">GET DATA</button>
+<table>
+<thead>
+	<tr><th>ID</th><th>NAME</th><th>PWD</th></tr>
+</thead>
+<tbody id="tbody">
+</tbody>
+</table>
+</body>
+</html>
+
+
+
+
+

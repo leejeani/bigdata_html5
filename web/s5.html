@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+#result{
+	color:red;
+}
+</style>
+<script>
+function calc(){
+	
+	var num1 = 
+		document.getElementById('num1').value;
+	var num2 = 
+		document.getElementById('num2').value;
+	var op = 
+		document.getElementById('op').value;
+	
+	var result = 0;
+	if(op == "+"){
+		result = parseInt(num1) + 
+		         parseInt(num2);
+	}else if(op == "-"){
+		result = parseInt(num1) -  
+        parseInt(num2);
+	}else if(op == "*"){
+		result = parseInt(num1) * 
+        parseInt(num2);
+	}else if(op == "/"){
+		result = parseInt(num1) /  
+        parseInt(num2);
+	}
+	
+	document.getElementById('result').innerHTML
+	= result;
+}
+</script>
+</head>
+<body>
+<h1>Calculator</h1>
+Number1<input type="number" id="num1"><br>
+<select id="op">
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="*">*</option>
+	<option value="/">/</option>
+</select><br>
+Number2<input type="number" id="num2"><br>
+<input type="button" value="calc" 
+onclick="calc();">
+<h3 id="result">Result?</h3>
+</body>
+</html>
+
+
+
+

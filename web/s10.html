@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+var num = 0;
+function ran(){
+	num = Math.random();
+	num = num * 100;
+	num = Math.round(num);
+	document.getElementById('num').innerHTML
+	= '생성 완료 맞춰봐 !!';
+};
+function game(){
+	var inputNum = 
+		document.getElementById('inputnum').value;
+	var result = 
+		document.getElementById('result');
+	if(num > inputNum){
+		result.innerHTML = 
+			"작다.";
+	}else if(num < inputNum){
+		result.innerHTML = 
+			"크다.";
+	}else{
+		result.innerHTML = 
+			"정답";
+	}
+};
+</script>
+</head>
+<body>
+<button onclick="ran();">숫자 발행</button>
+<h2 id="num"></h2>
+<hr>
+number <input type="number" id="inputnum"><br>
+<button onclick="game();">제출</button><br>
+<h3 id="result"></h3>
+
+
+</body>
+</html>
+
+
+
+
+
+
+

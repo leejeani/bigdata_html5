@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+function calc(num){
+	var cal = document.getElementById('cal');
+	if(cal.value ==null || cal.value == ''){
+		cal.value = num;	
+	}else{
+		cal.value = cal.value+"+"+num;
+	}
+	
+	
+};
+function result(){
+	var cal = document.getElementById('cal');
+	var result = eval(cal.value);
+	cal.value = result;
+};
+</script>
+</head>
+<body>
+<input type="text" id="cal" >
+<button onclick="calc(1);">1</button>
+<button onclick="calc(2);">2</button>
+<button onclick="calc(3);">3</button>
+<button onclick="result();">=</button>
+</body>
+</html>
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+function c1(){
+	var h = document.getElementById('h');
+	h.style.fontSize = '200%';
+	h.style.color = 'red';
+	h.innerHTML = 'Click1';
+};
+function c2(){
+	var h = document.getElementById('h');
+	var str = h.innerHTML;
+	h.style.fontSize = '80%';
+	h.style.color = 'blue';
+	h.innerHTML = str+'  Click2';
+};
+</script>
+</head>
+<body>
+<a href="#" onclick="c1();">Click1</a>
+<a href="#" onclick="c2();">Click2</a>
+<h2 id="h">Header</h2>
+</body>
+</html>
+
+
+
+
+
+
+
