@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style>
+	.ho{
+		color:red;
+		background:gray;
+	}
+</style>
+<script>
+$(document).ready(function(){
+	$('button').click(function(){
+		$('h1:eq(0)').css('color','red');
+		$('h1:eq(1)').css('color','blue');
+	});
+	$('h1:eq(0)').hover(function(){
+		$(this).addClass('ho');
+	},function(){
+		$(this).removeClass('ho');
+	});
+	
+	$('input[name="id"]').on({
+		focus:function(){
+			$(this).addClass('ho');
+		},
+		blur:function(){
+			$(this).removeClass('ho');
+		}
+	});
+});
+</script>
+</head>
+<body>
+<button>Click</button>
+<h1>Header1</h1>
+<h1>Header1</h1>
+ID<input type="text" name="id">
+</body>
+</html>
+
+
+
+
+
+
+

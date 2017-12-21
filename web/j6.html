@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style></style>
+<script>
+$(document).ready(function(){
+	$('button').eq(0).click(function(){
+		var str = $('p').text();
+		alert(str);
+		$('p').text('<h1>button clicked</h1>');
+	});
+	$('button').eq(1).click(function(){
+		var str = $('p').html();
+		alert(str);
+		$('p').html('<h1>button clicked</h1>');
+	});
+	$('button').eq(2).click(function(){
+		var str = $('input[name="id"]').val();
+		alert(str);
+		$('input[name="id"]').val('replace value');
+	});
+	$('button').eq(3).click(function(){
+		var str = $('img').attr('src');
+		alert(str);
+		$('img').attr('src','mv3.jpg');
+	});
+	$('button').eq(4).click(function(){
+		$('p').remove();
+	});
+	$('button').eq(5).click(function(){
+		$('p').empty();
+	});
+});
+</script>
+</head>
+<body>
+<button>text</button>
+<button>html</button>
+<button>val</button>
+<button>attr</button>
+<button>remove</button>
+<button>empty</button>
+<p>TEXT <strong>TEST</strong></p>
+INPUT TEXT<input type="text" name="id">
+<br>
+<img src="mv2.jpg">
+</body>
+</html>
+
+
+
+
+
+
+

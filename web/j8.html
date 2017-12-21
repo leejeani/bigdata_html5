@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style>
+ul{
+	width:300px;
+	border:2px solid red;
+}
+</style>
+<script>
+$(document).ready(function(){
+	$('button').eq(0).click(function(){
+		$('ul').append('<li>과일</li>');
+	});
+	$('button').eq(1).click(function(){
+		$('ul').prepend('<li>고기</li>');
+	});
+	$('button').eq(2).click(function(){
+		$('ul').after('After');
+	});
+	$('button').eq(3).click(function(){
+		$('ul').before('Before');
+	});
+	$('button').eq(4).click(function(){
+		$('li:last-child').remove();
+	});
+	$('button').eq(5).click(function(){
+		$('ul').empty();
+	});
+});
+</script>
+</head>
+<body>
+<button>APPEND</button>
+<button>PREPEND</button>
+<button>AFTER</button>
+<button>BEFORE</button>
+<button>REMOVE</button>
+<button>REMOVE ALL</button>
+<ul>
+	<li>갈비</li>
+	<li>송편</li>
+	<li>사과</li>
+</ul>
+</body>
+</html>
+
+
+

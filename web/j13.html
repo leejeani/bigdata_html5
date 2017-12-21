@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style>
+div{
+	width:300px;;
+	border:2px solid red;
+}
+</style>
+<script>
+function display(data){
+	var output = '';
+	var xmlData = $.parseXML(data);
+	$(xmlData).find('customer').each(function(){
+		var id = $(this).find('id').text();
+		var pwd = $(this).find('pwd').text();
+		var name = $(this).find('name').text();
+		output += '<h4>';
+		output += id+' '+pwd+' '+name;
+		output += '</h4>';
+	});
+	
+	$('div').html(output);
+};
+
+function getData(){
+	// data를 요청 한다.
+	// 요청한 데이터는 XML로 내려온다.
+	var data = '';
+	data += '<customers>';
+	data += '<customer>';
+	data += '<id>id01</id>';
+	data += '<pwd>pwd01</pwd>';
+	data += '<name>james1</name>';
+	data += '</customer>';
+	data += '<customer>';
+	data += '<id>id02</id>';
+	data += '<pwd>pwd02</pwd>';
+	data += '<name>james2</name>';
+	data += '</customer>';
+	data += '<customer>';
+	data += '<id>id03</id>';
+	data += '<pwd>pwd03</pwd>';
+	data += '<name>james3</name>';
+	data += '</customer>';
+	data += '<customer>';
+	data += '<id>id04</id>';
+	data += '<pwd>pwd04</pwd>';
+	data += '<name>james4</name>';
+	data += '</customer>';
+	data += '<customer>';
+	data += '<id>id05</id>';
+	data += '<pwd>pwd05</pwd>';
+	data += '<name>james5</name>';
+	data += '</customer>';
+	data += '</customers>';
+	display(data);
+};
+
+$(document).ready(function(){
+	$('button').click(function(){
+		getData();
+	});
+});
+</script>
+</head>
+<body>
+<button>GET DATA</button>
+<div></div>
+</body>
+</html>
+
+
+
+

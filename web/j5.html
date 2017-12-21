@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style>
+#output_div{
+	width:300px;
+	height:300px;
+	border: 2px solid red;
+	position: relative;
+}
+#output_div > div{
+	position: absolute;
+	width:300px;
+	height:300px;
+}
+#output_div > div:nth-child(1){
+	background:yellow;
+}
+#output_div > div:nth-child(2){
+	background:pink;
+}
+#output_div > div:nth-child(3){
+	background:green;
+}
+</style>
+<script>
+$(document).ready(function(){
+	$('a:eq(0)').click(function(){
+		$('#output_div > div:eq(0)').fadeIn('slow');
+		$('#output_div > div:eq(1)').fadeOut('slow');
+		$('#output_div > div:eq(2)').fadeOut('slow');
+	});
+	$('a:eq(1)').click(function(){
+		$('#output_div > div:eq(0)').fadeOut('slow');
+		$('#output_div > div:eq(1)').fadeIn('slow');
+		$('#output_div > div:eq(2)').fadeOut('slow');
+	});
+	$('a:eq(2)').click(function(){
+		$('#output_div > div:eq(0)').fadeOut('slow');
+		$('#output_div > div:eq(1)').fadeOut('slow');
+		$('#output_div > div:eq(2)').fadeIn('slow');
+	});
+	$('a:eq(3)').click(function(){
+		$('#output_div').toggle('slow');
+	});
+	$('a:eq(4)').click(function(){
+		$('#output_div').animate({
+			left:'300px',
+			opacity: '0.5'
+		});
+	});
+	$('a:eq(5)').click(function(){
+		$('#output_div').animate({
+			left:'0',
+			opacity: '1'
+		});
+	});
+	
+});
+</script>
+</head>
+<body>
+<a href="#">Movie 1</a>
+<a href="#">Movie 2</a>
+<a href="#">Movie 3</a>
+<a href="#">TOGGLE</a>
+<a href="#">ANIMATE1</a>
+<a href="#">ANIMATE2</a>
+<div id="output_div">
+	<div>
+		슈퍼맨1
+		<img src="mv2.jpg">
+	</div>
+	<div>
+		슈퍼맨2
+		<img src="mv3.jpg">
+	</div>
+	<div>
+		슈퍼맨3
+		<img src="mv5.jpg">
+	</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

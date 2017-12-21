@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style></style>
+<script>
+var imgs = ['mv1.jpg','mv2.jpg','mv3.jpg'];
+$(document).ready(function(){
+	var i = 0;
+	setInterval(function() {
+		$('img').attr('src',imgs[i]);
+		i++;
+		if(i == imgs.length){
+			i = 0;
+		}
+	}, 2000);
+});
+</script>
+</head>
+<body>
+<img src="mv1.jpg">
+</body>
+</html>
+
+
+
+
+

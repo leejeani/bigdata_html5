@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style>
+div{
+	width:300px;
+	border:3px solid red;
+}
+</style>
+<script>
+function display1(data){
+	var output = '';
+	$(data).each(function(index,item){
+		output += '<h3>';
+		output += item;
+		output += '</h3>';
+	});
+	$('div').html(output);
+};
+function display2(data){
+	var output = '';
+	$(data).each(function(index,item){
+		output += '<h4>';
+		output += item.id+' '+item.pwd+
+		' '+ item.name;
+		output += '</h4>';
+	});
+	$('div').html(output);
+};
+function getData1(){
+	var data = 
+	[1,2,3,4,5];
+	display1(data);
+};
+function getData2(){
+	var data = [
+		{'id':'id01','pwd':'pwd01','name':'james1'},
+		{'id':'id02','pwd':'pwd02','name':'james2'},
+		{'id':'id03','pwd':'pwd03','name':'james3'},
+		{'id':'id04','pwd':'pwd04','name':'james4'},
+		{'id':'id05','pwd':'pwd05','name':'james5'}
+		];
+	display2(data);
+};
+$(document).ready(function(){
+	$('button').eq(0).click(function(){
+		getData1();
+	});
+	$('button').eq(1).click(function(){
+		getData2();
+	});
+});
+</script>
+</head>
+<body>
+<h1>jQuery Array Test</h1>
+<button>Get Data 1</button>
+<button>Get Data 2</button>
+<div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

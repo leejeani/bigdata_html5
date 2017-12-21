@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style></style>
+<script>
+function getImage(){
+	for(var i = 0;i<10;i++){
+		$('body').append('<img src="banner.jpg">');
+	}
+};
+$(document).ready(function(){
+	getImage();
+	$(window).scroll(function(){
+		var docH = $(document).height();
+		var scrollH = 
+			$(window).height() +
+			$(window).scrollTop();
+		if(scrollH+50 >= docH ){
+			getImage();
+		}
+	});
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>
