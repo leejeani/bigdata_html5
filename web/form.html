@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Form Test</h1>
+<form>
+ID<input type="text" size="10" value="id01" readonly="readonly"><br>
+PWD<input type="password" size="15" autofocus="autofocus"><br>
+TEL<input type="tel" required="required"
+pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+title="###-####-####"
+>
+<br>
+<!-- HTML5 -->
+eMail<input type="email" placeholder="xxx@xxx.co.kr"><br>
+color<input type="color"><br>
+date<input type="date"><br>
+number<input type="number" min="1" max="10" 
+step="2"><br>
+range<input type="range" min="1" max="10"
+step="2"><br>
+<fieldset>
+<legend>성별</legend>
+<input type="radio" name="gender" value="male">남성
+<input type="radio" name="gender" value="female">여성
+<input type="radio" name="gender" value="aje">아저씨
+</fieldset>
+<fieldset>
+<legend>취미</legend>
+<input type="checkbox" name="hobby" value="1">마라톤
+<input type="checkbox" name="hobby" value="2">음악
+<input type="checkbox" name="hobby" value="3">공부
+<input type="checkbox" name="hobby" value="4">축구
+</fieldset>
+<br>
+<textarea rows="10" cols="100"></textarea>
+<br>
+<select>
+	<optgroup label="외산">
+		<option>BMW</option>
+		<option>BENZ</option>
+	</optgroup>
+	<optgroup label="국산">
+		<option selected="selected">HD</option>
+		<option>KIA</option>
+	</optgroup>
+</select>
+<br>
+FILE<input type="file">
+<br>
+<input type="hidden">
+<input type="submit" value="REGISTER"><br>
+<input type="reset" value="CANCEL"><br>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
