@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style></style>
+<script>
+function display(result){
+	if(result == "1"){
+		$('h4').text('사용 가능 합니다.');
+	}else{
+		$('h4').text('사용 불가능 합니다.');
+	}
+};
+function requestAJAX(sdata){
+	$.ajax({
+		url:'idc', 
+		data:{id:sdata},
+		success:function(rdata){
+			display(rdata.trim());
+		}
+	});
+};
+$(document).ready(function(){
+	$('button').click(function(){
+		var data = 
+			$('input[name="id"]').val();
+		requestAJAX(data);
+	});
+});
+</script>
+</head>
+<body>
+<h1>AJAX SEND TEST</h1>
+ID<input type="text" name="id">
+<button>Check</button>
+<h4></h4>
+</body>
+</html>
+
+
+
+
+

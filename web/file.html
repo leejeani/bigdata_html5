@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style></style>
+<script>
+	$(document).ready(function() {
+		$('input[type="button"]').eq(1).click(function() {
+			filesystem.root.getFile('log.txt', {
+				create : true,
+				exclusive : true
+			},
+
+				function(fileEntry) {
+
+					//console.log("생성된 파일의 절대경로", fileEntry.fullPath);
+
+					printMsg("생성된 파일의 절대경로" + fileEntry.fullPath);
+
+				},
+
+				errorCallback
+
+			);
+
+
+
+		});
+
+
+
+		$('input[type="button"]').eq(0).click(function() {
+			var files = document.getElementById('file').files;
+			if (files.length == 0) {
+				alert('파일을 선택 하세요');
+				$('input[type="file"]').focus();
+				return;
+			}
+			var file = files[0];
+			var reader = new FileReader();
+			reader.onload = function() {
+				document.getElementById('result').value = reader.result;
+			};
+			reader.readAsText(file, "EUC-KR");
+			/* 		alert(file.name+' '
+							 +file.size+' '
+							 +file.type+' '
+							 +file.lastModifiedDate
+						); */
+
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>File Test</h1>
+	<input type="file" name="file" id="file">
+	<br>
+	<input type="button" value="LOAD">
+	<input type="button" value="SAVE">
+	<br>
+	<textarea id="result" rows="10" cols="100"></textarea>
+</body>
+</html>
+
+
+
+
+

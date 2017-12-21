@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script
+	src="http://maps.google.com/maps/api/js?key=AIzaSyBDjP0aXQMF0zxOe92a73E70YfJgHAxzow&sensor=false"></script>
+
+<style>
+#map {
+	width: 500px;
+	height: 500px;
+	border: 2px solid black;
+}
+</style>
+<script>
+	var sdatas = [
+		{
+			'lat' : 37.5653,
+			'lng' : 126.96958,
+			'label' : '곱창쌀롱',
+			'href' : 'http://www.naver.com'
+		},
+		{
+			'lat' : 37.5758,
+			'lng' : 126.97952,
+			'label' : '곱창쌀롱',
+			'href' : 'http://www.naver.com'
+		},
+		{
+			'lat' : 37.5857,
+			'lng' : 126.98955,
+			'label' : '곱창쌀롱',
+			'href' : 'http://www.naver.com'
+		}
+	];
+
+
+	function displayMap(center) {
+		var map = new google.maps.Map(
+			document.querySelector('#map'),
+			{
+				mapTypeId : google.maps.MapTypeId.ROADMAP,
+				zoom : 11,
+				center : center
+			}
+		);
+		$(sdatas).each(function(index, item) {
+			var marker = new google.maps.Marker({
+				map : map,
+				position : new google.maps.LatLng(item.lat, item.lng),
+				label : item.label,
+				animation : google.maps.Animation.DROP
+			});
+			var infowindow = new google.maps.InfoWindow({
+				content : item.label
+			});
+
+
+			marker.addListener('click', function() {
+				location.href = item.href;
+			});
+			marker.addListener('mouseover', function() {
+				marker.setAnimation(google.maps.Animation.BOUNCE);
+				infowindow.open(marker.get('map'), marker);
+			});
+			marker.addListener('mouseout', function() {
+				marker.setAnimation(null);
+				infowindow.close();
+			});
+		});
+
+
+
+
+	}
+	;
+
+
+	$(document).ready(function() {
+		$('#bt1').click(function() {
+			var center = new google.maps.LatLng(37.5651, 126.98955);
+			displayMap(center);
+		});
+		$('#bt2').click(function() {
+			var center = new google.maps.LatLng(35.1643694, 128.9317145);
+			displayMap(center);
+		});
+		$('#bt3').click(function() {
+			var center = new google.maps.LatLng(36.3730796, 127.3187597);
+			displayMap(center);
+		});
+		$('#bt4').click(function() {
+			var center = new google.maps.LatLng(35.1766798, 126.7737597);
+			displayMap(center);
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="bt1">서울</button>
+	<button id="bt2">부산</button>
+	<button id="bt3">대전</button>
+	<button id="bt4">광주</button>
+	<div id="map"></div>
+</body>
+</html>
+
+
+
+

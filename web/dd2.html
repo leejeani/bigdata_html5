@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style>
+	ul{
+		list-style: none;
+		float:left;
+		margin:10px;
+		border:2px solid red;
+		width:100px;
+		height:150px;
+	}
+</style>
+
+<script>
+function ondragg(e){
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData('m',e.target.id);
+};
+function allowdrop(e){
+	e.preventDefault();
+};
+function ondropp(e){
+	e.preventDefault();
+	var src = e.dataTransfer.getData('m');
+	e.target.appendChild(document.getElementById(src));
+}; 
+</script>
+</head>
+<body>
+<h1>Drag and Drop</h1>
+<ul ondrop="ondropp(event)" ondragover="allowdrop(event)">
+	<li id="m1" draggable="true" ondragstart="ondragg(event)">초밥</li>
+	<li id="m2" draggable="true" ondragstart="ondragg(event)">핫도그</li>
+	<li id="m3" draggable="true" ondragstart="ondragg(event)">돼지국밥</li>
+	<li id="m4" draggable="true" ondragstart="ondragg(event)">곱창</li>
+</ul>
+<ul ondrop="ondropp(event)" ondragover="allowdrop(event)">
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+

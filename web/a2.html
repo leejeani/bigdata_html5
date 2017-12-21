@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style>
+div{
+	width:400px;
+	border:3px solid black;
+}
+</style>
+<script>
+function displayJSON(data){
+	
+};
+function displayXML(data){
+	
+};
+function requestJSON(){
+	$.ajax({
+		url:'json.jsp',
+		success:function(data){
+			displayJSON(data);
+		}
+	});
+};
+function requestXML(){
+	$.ajax({
+		url:'xml.jsp',
+		success:function(data){
+			displayXML(data);
+		}
+	});
+};
+$(document).ready(function(){
+	// JSON 
+	$('button').eq(0).click(function(){
+		requestJSON();
+	});
+	// XML
+	$('button').eq(1).click(function(){
+		requestXML();
+	});
+	setInterval(function() {
+		requestXML();
+	}, 10000);
+});
+</script>
+</head>
+<body>
+<h1>AJAX REQUEST TEST</h1>
+<button>GET JSON DATA</button>
+<button>GET XML DATA</button>
+<div></div>
+</body>
+</html>
+
+
+
+

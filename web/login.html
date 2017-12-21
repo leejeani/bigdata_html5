@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style></style>
+<script>
+$(document).ready(function(){
+	var id = localStorage.id;
+	var pwd = localStorage.pwd;
+	if(!(id == null || id == '')){
+		$('input[name="id"]').val(id);
+	}
+	if(!(pwd == null || pwd == '')){
+		$('input[name="pwd"]').val(pwd);
+	}
+});
+function login(f){
+	var id = f.id.value;
+	var pwd = f.pwd.value;
+	var c = confirm('로그인 하시겠씁니까');
+	if(c == true){
+		if(('input[name="check"]')[0].checked){
+			localStorage.id = id;
+		}else{
+			localStorage.id = null;
+		}
+		if(('input[name="check"]')[1].checked){
+			localStorage.pwd = pwd;
+		}else{
+			localStorage.pwd = null;
+		}
+		f.method='POST';
+		f.action='login';
+		f.submit();
+	}
+};
+</script>
+</head>
+<body>
+<h1>Login Page</h1>
+<form name="loginform">
+ID<input type="text" name="id"><br>
+PWD<input type="password" name="pwd"><br>
+ID저장<input type="checkbox" name="check">
+PWD저장<input type="checkbox" name="check"><br>
+<input onclick="login(this.form);" type="button" value="LOGIN">
+</form>
+</body>
+</html>
+
+
+
+
+
+

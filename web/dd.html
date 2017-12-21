@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style>
+h1{
+	text-align: center;
+}
+div{
+	margin:5px auto;
+	border:3px solid black;
+	width:500px;
+	height:150px;
+}
+div > img{
+	width:100px;
+	margin:10px;
+}
+</style>
+<script>
+function ondragg(e){
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData('m',e.target.id);
+};
+function allowdrop(e){
+	e.preventDefault();
+};
+function ondropp(e){
+	e.preventDefault();
+	var src = e.dataTransfer.getData('m');
+	e.target.appendChild(document.getElementById(src));
+};
+</script>
+</head>
+<body>
+<h1>Shopping Cart</h1>
+<div ondrop="ondropp(event)" 
+     ondragover="allowdrop(event)">
+	<img src="m1.jpg" id="m1" draggable="true" ondragstart="ondragg(event)">
+	<img src="m2.jpg" id="m2" draggable="true" ondragstart="ondragg(event)">
+	<img src="m3.jpg" id="m3" draggable="true" ondragstart="ondragg(event)">
+	<img src="m4.jpg" id="m4" draggable="true" ondragstart="ondragg(event)">
+</div>
+<div ondrop="ondropp(event)" ondragover="allowdrop(event)"></div>
+</body>
+</html>
+
+
+
+
+
+

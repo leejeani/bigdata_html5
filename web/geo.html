@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title he<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script
+	src="http://maps.google.com/maps/api/js?key=AIzaSyBDjP0aXQMF0zxOe92a73E70YfJgHAxzow&sensor=false"></script>
+
+<style>
+#map {
+	width: 500px;
+	height: 500px;
+	border: 2px solid black;
+}
+</style>
+<script>
+function ok(position){
+	var lat = position.coords.latitude;
+	var lng = position.coords.longitude;
+	$('h2').text(lat+' : '+lng);
+	var center = 
+	new google.maps.LatLng(lat, lng);
+	var map = new google.maps.Map(
+			document.querySelector('#map'),
+			{
+				mapTypeId : google.maps.MapTypeId.ROADMAP,
+				zoom : 18,
+				center : center
+			}
+		);
+	var marker = new google.maps.Marker({
+		map : map,
+		position : new google.maps.LatLng(lat, lng),
+		label : 'MyMarker',
+		animation : google.maps.Animation.DROP
+	});
+};
+function error(){
+	alert('위치정보를 찾지 못했음!!');
+};
+function getLocation(){
+	var geolocation = 
+		navigator.geolocation;
+	geolocation.getCurrentPosition(
+		ok,error		
+	);
+};
+
+$(document).ready(function(){
+	$('button').click(function(){
+		getLocation();
+	});
+	var geolocation = 
+		navigator.geolocation;
+	geolocation.watchPosition(
+		ok,error,
+		{
+			enableHighAccuary: true,
+			timeout:10000,
+			maximunAge:0
+		}
+	);
+	
+});
+</script>
+</head>
+<body>
+<h1>Geo Test</h1>
+<button>Location</button>
+<h2></h2>
+<div id="map"></div>
+</body>
+</html>
+
+

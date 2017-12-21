@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style></style>
+<script>
+$(document).ready(function(){
+	$('button').eq(0).click(function(){
+		var text = 
+			$('input[name="id"]').val();
+		sessionStorage.id = text;
+	});
+	$('button').eq(1).click(function(){
+		var text = sessionStorage.id;
+		if(text == '' || text == null){
+			alert('저장된 값이 없습니다.');
+		}else{
+			$('input[name="id"]').val(text);
+		}
+	});
+});
+</script>
+</head>
+<body>
+<h1>Web Storage Test</h1>
+<button>Store</button>
+<button>Load</button>
+<br>
+<input type="text" name="id">
+</body>
+</html>
+
+
+
+
