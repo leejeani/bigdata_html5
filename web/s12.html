@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+#c{
+	width:400px;
+	height:400px;
+	border:2px solid red; 
+}
+</style>
+<script>
+window.onload = function(){
+	var canvas = document.getElementById('c');
+	var context = canvas.getContext('2d');
+	context.beginPath();
+	context.moveTo(10,10);
+	context.lineTo(200,200);
+	context.rect(30,30,150,150);
+	context.fillStyle='blue';
+	context.fill();
+	context.stroke();
+};
+</script>
+</head>
+<body>
+<h1>CANVAS TEST</h1>
+<canvas id="c"></canvas>
+</body>
+</html>
+
+
+
+

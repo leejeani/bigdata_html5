@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+
+a{
+	text-decoration: none;
+	background: red;
+}
+#maindiv{
+	width:600px;
+	height:400px;
+	border:3px solid red;
+	position:relative;
+}
+#tab1{
+	width:600px;
+	height:400px;
+	background:yellow;
+	position:absolute;
+}
+#tab2{
+	width:600px;
+	height:400px;
+	background:green;
+	position:absolute;
+}
+#tab3{
+	width:600px; 
+	height:400px;
+	background:blue;
+	position:absolute;
+}
+</style>
+<script>
+function tab(t){
+	var tab1 = 
+	document.getElementById('tab1');
+	var tab2 = 
+	document.getElementById('tab2');
+	var tab3 = 
+	document.getElementById('tab3');
+	switch(t){
+	case 1:
+		var b1 =
+		document.getElementsByTagName('a')[0];
+		b1.style.background = 'yellow';
+		tab1.style.visibility = 'visible';
+		tab2.style.visibility = 'hidden';
+		tab3.style.visibility = 'hidden';
+		break;
+	case 2:
+		var b2 =
+		document.getElementsByTagName('a')[1];
+		b2.style.background = 'green';
+		tab1.style.visibility = 'hidden';
+		tab2.style.visibility = 'visible';
+		tab3.style.visibility = 'hidden';
+		break;
+	case 3:
+		var b3 =
+		document.getElementsByTagName('a')[2];
+		b3.style.background = 'blue';
+		tab1.style.visibility = 'hidden';
+		tab2.style.visibility = 'hidden';
+		tab3.style.visibility = 'visible';
+		break;
+	}
+}
+</script>
+</head>
+<body>
+<a href="#" onclick="tab(1)">TAB1</a>
+<a href="#" onclick="tab(2)">TAB2</a>
+<a href="#" onclick="tab(3)">TAB3</a>
+<div id="maindiv">
+	<div id="tab1"></div>
+	<div id="tab2"></div>
+	<div id="tab3"></div>
+</div>
+</body>
+</html>
+
+
+
+
+

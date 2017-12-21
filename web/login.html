@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+function register(){
+	var id = document.getElementById('id');
+	var pwd = document.getElementById('pwd');
+	var id_span = document.getElementById('id_span');
+	var pwd_span = document.getElementById('pwd_span');
+	
+	// ID는 영문으로 시작하는 영문숫자
+	// 6자리 이상
+	if(id.value.length >= 6){
+		id_span.innerHTML ='';
+		var exp = /^[a-zA-Z][a-zA-Z0-9]+/;
+		if(!exp.test(id.value)){
+			id_span.innerHTML = '영문으로 시작하고 영문또는 숫자 입력';
+			id.focus();
+			return;
+		}
+	}else{
+		id_span.innerHTML = '6자리 이상이어야 합니다.';
+		id.focus();
+		return;
+	};
+	// PWD는 8자이상 영문 대소문자
+	// 숫자 특수문자 반드시 포함
+	if(pwd.value.length >= 8){
+		pwd_span.innerHTML ='';
+		var exp = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])/;
+		if(!exp.test(pwd.value)){
+			pwd_span.innerHTML = '영문숫자특수문자 입력';
+			pwd.focus();
+			return;
+		}
+	}else{
+		pwd_span.innerHTML = '8자리 이상이어야 합니다.';
+		pwd.focus();
+		return;
+	}
+	
+	var c = confirm('가입하시겠습니까?');
+	if(c == true){
+		document.registerform.method='GET';
+		document.registerform.action='register';
+		document.registerform.submit();
+	}
+	
+};
+</script>
+</head>
+<body>
+<h1>회원가입</h1>
+<form name="registerform">
+ID<input type="text" id="id" name="id">
+<span id="id_span"></span>
+<br>
+PWD<input type="password" 
+id="pwd" name="pwd">
+<span id="pwd_span"></span>
+<br>
+DATE<input type="date" name="regdate" ><br>
+GENDER<select name="gender">
+	<option value="m">Male</option>
+	<option value="f">Female</option>
+</select><br>
+CHOICE
+경제<input type="checkbox" name="choice" value="1">
+문화<input type="checkbox" name="choice" value="2">
+정치<input type="checkbox" name="choice" value="3">
+<br>
+
+
+
+
+<input type="button" value="REGISTER"
+onclick="register();">
+</form>
+</body>
+</html>
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+setTimeout(function() {
+	var url = 'http://www.naver.com';
+	var spec = 'left=100,top=200,width=300,height=300';
+	var w = window.open(url,'_blank',spec,true);
+	w.moveTo(0,0);
+	w.resizeTo(screen.availWidth,
+			screen.availHeight);
+}, 1000);
+
+function newwindow(){
+	var url = 'http://www.naver.com';
+	var spec = 'left=100,top=200,width=300,height=300';
+	var w = window.open(url,'_blank',spec,true);
+	w.moveTo(0,0);
+	w.resizeTo(screen.availWidth,
+			screen.availHeight);
+};
+</script>
+</head>
+<body>
+<h1>BOM TEST</h1>
+<button onclick="newwindow();">
+NEW WINDOW</button>
+</body>
+</html>
+
+
+
+
+

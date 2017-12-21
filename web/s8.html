@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+function checkId(){
+	var span = 
+	document.getElementById('cid');
+	var id = 
+	document.getElementById('id').value;
+	if(id == '' || id == null){
+		span.innerHTML = 'ID를입력하세요';
+		document.getElementById('id').focus();
+		return;
+	}
+/* 	if(id.length <= 6){
+		span.innerHTML = '6자리 이상이어야 합니다.';
+		document.getElementById('id').focus();
+		return;
+	} */
+	var exp = /^\d{3}$/;
+	var str = '111';
+
+	var result = exp.test(str);
+	alert(result);
+ 	
+}
+</script>
+</head>
+<body>
+ID<input type="text" name="id" id="id"
+onblur="checkId();"><span id="cid"></span>
+<br>
+PwD<input type="password" name="pwd">
+</body>
+</html>
+
+
+

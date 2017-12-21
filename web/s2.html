@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+function login(){
+	var id = document.loginform.id.value;
+	var pwd = document.loginform.pwd.value;
+	if(id == '' || id == null){
+		alert('ID를 입력 하세요');
+		document.loginform.id.focus();
+		return;
+	}
+	if(pwd == '' || pwd == null){
+		alert('PWD를 입력 하세요');
+		document.loginform.pwd.focus();
+		return;
+	}
+	var c = confirm('로그인 하시겠습니까?');
+	if(c == true){
+		document.loginform.method='POST';
+		document.loginform.action='login';
+		document.loginform.submit();
+	}
+};
+	
+</script>
+</head>
+<body>
+<h1>LOGIN</h1>
+<form name="loginform">
+ID<input type="text" name="id"><br>
+PWD<input type="password" name="pwd"><br>
+<input type="button" value="LOGIN"
+onclick="login();">
+</form>
+</body>
+</html>
+
+
+
+
+

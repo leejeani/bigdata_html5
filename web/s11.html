@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+window.onload = function(){
+	setInterval(function() {
+		location.reload();
+	}, 2000);
+};
+
+function go(g){
+	switch(g){
+	case 'n':
+		var c = confirm("Naver로 이동할까요");
+		if(c == true){
+			location.href='http://www.naver.com';	
+		};
+		break;
+	case 'd':
+		var c = confirm("Daum로 이동할까요");
+		if(c == true){
+			location.href='http://www.daum.net';	
+		};
+		break;
+	};
+};
+</script>
+</head>
+<body>
+<a href="#" onclick="go('n');">NAVER</a>
+<a href="#" onclick="go('d');">DAUM</a>
+</body>
+</html>
+
+
+

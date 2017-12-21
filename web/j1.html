@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style></style>
+<script>
+$(document).ready(function(){
+	$('h1:nth-child(1)').css('color','red');
+	$('#h2').css('color','green');
+	$('h1.c1').css('color','blue');
+	$('div  h1').css('background','gray');
+	//$('a:not(a:eq(2))').css('color','white');
+	// 마우스가 특정 a에 들어가면
+	// 나머지 color를 흰색으로 하고
+	// 마누스가 나가면 원상 복귀
+	$('a').hover(function(){
+		$('a').not(this).css('color','white');
+	},function(){
+		$('a').css('color','black');
+	});
+});
+</script>
+</head>
+<body>
+<a href="#">A1</a>
+<a href="#">A2</a>
+<a href="#">A3</a>
+<a href="#">A4</a>
+<h1>Header1</h1>
+<h1 id="h2">Header2</h1>
+<h1 class="c1">Header3</h1>
+<h3 class="c1">Header4</h3>
+<div>
+	<h1>Header5</h1>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

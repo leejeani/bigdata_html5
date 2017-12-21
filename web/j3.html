@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style></style>
+<script>
+$(document).ready(function(){
+	$('#login_div  :text,:password').focus(function(){
+		$(this).css('background','gray');	
+	});
+	
+ 	$('#login_div  :text,:password').blur(function(){
+		$(this).css('background','white');	
+	}); 
+	
+	$('#login_div  input[type="button"]').click(function(){
+		var id  =
+			$('input[name="id"]').val();
+		var pwd  =
+			$('input[name="pwd"]').val();
+		
+		
+		
+		document.loginform.method='GET';
+		document.loginform.action='login';
+		document.loginform.submit();
+	});
+});
+</script>
+</head>
+<body>
+<h1>Form TEST</h1>
+<div id="login_div">
+<form name="loginform">
+ID<input type="text" name="id"><span></span><br>
+PWD<input type="password" name="pwd"><span></span><br>
+<input type="button" value="LOGIN">
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
