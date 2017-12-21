@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+function start(){
+	var hh1 = document.getElementById('hh1');
+	var hh2 = document.getElementById('hh2');
+	var hh3 = document.getElementById('hh3');
+	
+	
+	
+	
+	var s1 = setInterval(function() {
+		hh1.innerHTML = hh1.innerHTML+'*';
+	}, 500);
+	var s2 = setInterval(function() {
+		hh2.innerHTML = hh2.innerHTML+'*';
+	}, 800);
+	var s3 = setInterval(function() {
+		hh3.innerHTML = hh3.innerHTML+'*';
+	}, 200);
+	
+	setTimeout(function() {
+		clearInterval(s1);
+		clearInterval(s2);
+		clearInterval(s3);
+	}, 5000);
+};
+</script>
+</head>
+<body>
+<button onclick="start();">Start</button>
+<h1 id="hh1"></h1>
+<h1 id="hh2"></h1>
+<h1 id="hh3"></h1>
+</body>
+</html>
+
+
+
+

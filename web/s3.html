@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+window.onload = function(){
+	var result = 
+		document.getElementById("result");
+	setInterval(function() {
+		var date = new Date();
+		result.innerHTML = date.toString();
+	}, 1000);
+	
+};
+</script>
+</head>
+<body>
+<h1 id="result"></h1>
+</body>
+</html>
+
+
+

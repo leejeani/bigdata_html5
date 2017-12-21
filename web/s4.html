@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+#result{
+	width:300px;
+	border:2px solid red;
+}
+</style>
+<script>
+var datas = [
+	{count:1,content:'국정원',updown:'up'},
+	{count:2,content:'태극기',updown:'down'},
+	{count:3,content:'한서희',updown:'up'},
+	{count:4,content:'신수지',updown:'down'},
+	{count:5,content:'정진석',updown:'up'}
+	];
+function getData(){
+	var result =
+		document.getElementById('result');
+	var output = '';
+	for(var i in datas){
+		output += '<h3>';
+		output += datas[i].count+" "+
+				  datas[i].content+" "+
+				  datas[i].updown+" ";
+		output += '</h3>';
+	};
+	
+	result.innerHTML = output; 
+};
+</script>
+</head>
+<body>
+<button onclick="getData();">GET DATA</button>
+<div id="result"></div>
+</body>
+</html>
+
+
+
+

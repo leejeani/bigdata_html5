@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+#result{
+	width:400px;
+	border:2px solid red;
+}
+</style>
+<script>
+var students = [
+	{name:'이치호',ko:80,en:100,si:90,ma:80},
+	{name:'전채민',ko:70,en:90,si:89,ma:75},
+	{name:'공상원',ko:93,en:100,si:76,ma:87},
+	{name:'김영서',ko:89,en:98,si:90,ma:85},
+	{name:'김태형',ko:92,en:77,si:65,ma:99}
+];
+function getData(){
+	for(var i in students){
+		students[i].getAvg = function(){
+			return (this.ko+this.en+
+			       this.si+this.ma)/4;
+		};
+	};
+		var result = 
+			document.getElementById('result');
+		var output = '';
+		for(var i in students){
+			output += '<h4>';
+			output += students[i].name+' ';
+			output += students[i].getAvg();
+			output += '</h4>';
+		};
+		result.innerHTML = output;
+	
+};
+</script>
+</head>
+<body>
+<button onclick="getData();">GET DATE</button>
+<div id="result"></div>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+function Rect(x,y){
+	this.x = x;
+	this.y = y;
+};
+Rect.prototype.getArea = function(){
+	return this.x * this.y;
+};
+var r1 = new Rect(100,100);
+var r2 = new Rect(200,200);
+var r3 = new Rect(300,300);
+alert(r1.getArea());
+alert(r2.getArea());
+alert(r3.getArea());
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+

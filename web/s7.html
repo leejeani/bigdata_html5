@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+function calc(f){
+	var nums1 = f.n1.value;
+	var nums2 = f.n2.value;
+	var op = f.op.value;
+	var nums3 = 
+		document.getElementsByName('n3');
+	var nums3Array = [];
+	for(var i in nums3){
+		if(nums3[i].checked){
+			nums3Array.push(nums3[i].value);
+		};
+	};
+	
+	// 1. nums1을 배열로 만든다.
+	var nums1Array = nums1.split(',');
+	// 2. nums2를 배열로 만든다.
+	var nums2Array = nums2.split(',');
+	// 3. 3개의 배열을 합친다.
+	var array3 = 
+		nums1Array.concat(nums2Array);
+	var array3 = 
+		array3.concat(nums3Array);
+	alert(array3);
+	alert(array3.sort());
+	var result = 
+	document.getElementsByTagName('span')[0];
+	var sum = 0;
+	if(op == 'sum'){
+		for(var i in array3){
+			sum += Number(array3[i]);
+		}
+		result.innerHTML = sum;
+	}else{
+		result.innerHTML = sum/array3.length;
+	}
+	return true;
+};
+</script>
+</head>
+<body>
+결과:<span></span>
+<form>
+<select name="op">
+	<option value="sum">SUM</option>
+	<option value="avg">AVG</option>
+</select>
+<br>
+<input type="text" name="n1"><br>
+<input type="text" name="n2"><br>
+<br>
+
+1<input type="checkbox" name="n3" value="1">
+2<input type="checkbox" name="n3" value="2">
+3<input type="checkbox" name="n3" value="3">
+<br>
+<input type="button" value="CALC"
+onclick="calc(this.form);">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+

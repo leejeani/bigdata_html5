@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+var result = 
+	document.getElementById('result');
+var Car = {
+	name:'k1',
+	color:'red',
+	speed:100,
+	go:function(){
+		return this.name+' '+this.speed;
+	},
+	stop:function(){
+		return this.name+' STOP';
+	}
+};
+function MyCar(name,color,speed){
+	this.name = name;
+	this.color = color;
+	this.speed = speed;
+	this.go = function(){
+		return this.name +" GO "+this.color;
+	};
+	this.stop = function(){};
+};
+function go(){
+	var result = 
+		document.getElementById('result');
+	var car = new MyCar('k2','black',100);
+	result.innerHTML = car.go();
+};
+function stop(){
+	var result = 
+		document.getElementById('result');
+	result.innerHTML = Car.stop();
+};
+</script>
+</head>
+<body>
+<button onclick="go();">GO</button>
+<button onclick="stop();">STOP</button>
+<h2 id="result"></h2>
+</body>
+</html>
+
+
