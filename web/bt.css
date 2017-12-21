@@ -1,0 +1,26 @@
+/** Button CSS **/
+
+@charset "EUC-KR";
+@import url('https://fonts.googleapis.com/css?family=Acme');
+a.small_bt{
+	font-family: 'Acme', sans-serif;
+	margin:10px auto;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px gray;
+	font-size: 220%;
+	font-weight: bold;
+	display: block;
+	width:120px;
+	height: 50px;
+	background: blue;
+	border: 10px solid red;
+	border-radius: 20px; 
+	box-shadow: 3px 3px 3px gray;
+	text-align: center;
+	color:white;
+	line-height: 50px;
+}
+a.small_bt:hover{
+	color:yellow;
+	border: 10px solid yellow;
+}

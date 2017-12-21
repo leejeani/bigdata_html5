@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link href="bt.css" rel="stylesheet" >
+<style>
+body{
+	background-image: url('wtop.jpg'); 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center top;
+}
+#center{
+	margin: 0 auto;
+	width:900px;
+}
+#menu{
+	margin:0 auto;
+	margin-top:150px;
+	
+}
+#menu > ul {
+ 	list-style: none;
+ 	text-align: center;
+ 	margin:0 auto;
+ 	height:60px;
+ 	border-top: 3px solid black;
+ 	border-bottom: 3px solid black;
+}
+#menu > ul > li{
+	display: inline;
+	letter-spacing: 10px;
+}
+#menu > ul > li > a{
+	text-decoration: none;
+	font-size: 150%;
+	font-weight: bold;
+	margin-right: 50px;
+	color: gray;
+	line-height: 60px;
+	text-shadow: 2px 2px 2px gray;
+}
+#menu > ul > li > a:hover{
+	color:black;
+	text-decoration: underline;
+}
+#center > table{
+	width:600px;
+	border-top: 2px double black;
+	border-bottom: 2px double black;
+	margin: 30px auto;
+	border-collapse: collapse;
+}
+#center > table > thead{
+	border-bottom: 1px solid black;
+}
+#center > table > tbody{
+	text-align: center;
+}
+#center > table > tbody > tr> td:nth-child(4){
+	text-align: right;
+}
+#center > table > tbody > tr:hover{
+	background: gray;
+	font-weight: bold;
+}
+#center > table >caption {
+	caption-side: bottom;
+}
+</style>
+</head>
+<body>
+<div id="menu">
+	<ul>
+		<li><a href="">HOME</a></li>
+		<li><a href="">BLOG</a></li>
+		<li><a href="">ABOUT</a></li>
+		<li><a href="">CONTACT</a></li>
+	</ul>
+</div>
+<div id="center">
+	<table>
+		<caption>Customer List</caption>
+	<thead>
+		<tr><th>ID</th><th>PWD</th><th>NAME</th><th>EMAIL</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+		<td>id01</td><td>pwd01</td><td>이말자</td><td>id01@naver.com</td>
+		</tr>
+		<tr>
+		<td>id02</td><td>pwd02</td><td>장말자</td><td>id01@naver.com</td>
+		</tr>
+		<tr>
+		<td>id03</td><td>pwd03</td><td>정말자</td><td>id01@naver.com</td>
+		</tr>
+		<tr>
+		<td>id04</td><td>pwd04</td><td>홍말자</td><td>id01@naver.com</td>
+		</tr>
+		<tr>
+		<td>id05</td><td>pwd05</td><td>김말자</td><td>id01@naver.com</td>
+		</tr>
+		<tr>
+		<td>id06</td><td>pwd06</td><td>김말자</td><td>id01@naver.com</td>
+		</tr>
+	</tbody>	
+	</table>
+</div>
+</body>
+</html>
+
+
+
+
+
