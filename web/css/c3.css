@@ -1,0 +1,24 @@
+@charset "EUC-KR";
+
+p:nth-child(2n){
+  background: pink;
+  color:white;
+}
+p:nth-child(2n+1){
+  background: gray;
+  color:white;
+}
+p:first-child{
+  background: black;
+  color:orange;
+}
+p:hover{
+  background: black;
+  color:yellow;
+}
+input[name="pwd"]{
+	background: gray;
+}
+input[type="text"],input[type="password"]:focus{
+	background: yellow;
+}
